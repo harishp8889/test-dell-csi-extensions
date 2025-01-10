@@ -48,7 +48,7 @@ jobs:
           echo "${module}_new_tag=$new_tag" >> $GITHUB_ENV
           echo "${module}_new_version=$new_version" >> $GITHUB_ENV
           
-          git tag -a $new_tag -m "$module $new_tag"
+          git tag -s $new_tag -m "$module $new_tag"
           git push origin $new_tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -152,7 +152,7 @@ jobs:
             echo "${module}_new_tag=$new_tag" >> $GITHUB_ENV
             echo "${module}_new_version=$new_version" >> $GITHUB_ENV
             
-            git tag -a $new_tag -m "$module $new_tag"
+            git tag -s $new_tag -m "$module $new_tag"
             git push origin $new_tag
           done
 
